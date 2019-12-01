@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JEU DE LA VIE:  Fichier source de include/jeu.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JEU DE LA VIE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">jeu.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="jeu_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"> #ifndef __JEU_H</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __JEU_H</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="grille_8h.html">grille.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// modulo modifié pour traiter correctement les bords i=0 et j=0</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// dans le calcul des voisins avec bords cycliques</span></div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="jeu_8h.html#a653841e275690f6a0d743c7ac4b1fc25">   16</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="jeu_8h.html#a653841e275690f6a0d743c7ac4b1fc25">modulo</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> m) {<span class="keywordflow">return</span> (i+m)%m;}</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// compte le nombre de voisins vivants de la cellule (i,j)</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// les bords sont cycliques.</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">int</span> <a class="code" href="jeu_8h.html#a919a35926d94b71717909ecc50233f26">compte_voisins_vivants_cyclique</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <a class="code" href="structgrille.html">grille</a> g);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">int</span> <a class="code" href="jeu_8h.html#a2e8fdd206d197391527920bbbc137eef">compte_voisins_vivants_non_cyclique</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <a class="code" href="structgrille.html">grille</a> g);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// fait évoluer la grille g d&#39;un pas de temps</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="jeu_8h.html#aa97c0fafeb752bb66a038e73b7b5a36d">evolue</a> (<a class="code" href="structgrille.html">grille</a> *g, <a class="code" href="structgrille.html">grille</a> *gc, <a class="code" href="structcellule.html">cellule</a> *C, <span class="keywordtype">int</span> (*<a class="code" href="jeu_8h.html#ac22548ead77af485a5209ef6b9c73e2c">compte_voisins_vivants</a>) (<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <a class="code" href="structgrille.html">grille</a>), <span class="keywordtype">int</span> vieillissement);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// pointeur sur la fonction cyclique ou non cyclique</span></div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="jeu_8h.html#ac22548ead77af485a5209ef6b9c73e2c">   57</a></span>&#160;int (*<a class="code" href="jeu_8h.html#ac22548ead77af485a5209ef6b9c73e2c">compte_voisins_vivants</a>) (int, int, <a class="code" href="structgrille.html">grille</a>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="jeu_8h_html_a2e8fdd206d197391527920bbbc137eef"><div class="ttname"><a href="jeu_8h.html#a2e8fdd206d197391527920bbbc137eef">compte_voisins_vivants_non_cyclique</a></div><div class="ttdeci">int compte_voisins_vivants_non_cyclique(int i, int j, grille g)</div><div class="ttdoc">calcul le nombre de voisins vivants non cyclique </div><div class="ttdef"><b>Definition:</b> jeu.c:89</div></div>
+<div class="ttc" id="jeu_8h_html_a919a35926d94b71717909ecc50233f26"><div class="ttname"><a href="jeu_8h.html#a919a35926d94b71717909ecc50233f26">compte_voisins_vivants_cyclique</a></div><div class="ttdeci">int compte_voisins_vivants_cyclique(int i, int j, grille g)</div><div class="ttdoc">calcul le nombre de voisins vivants cyclique </div><div class="ttdef"><b>Definition:</b> jeu.c:75</div></div>
+<div class="ttc" id="jeu_8h_html_a653841e275690f6a0d743c7ac4b1fc25"><div class="ttname"><a href="jeu_8h.html#a653841e275690f6a0d743c7ac4b1fc25">modulo</a></div><div class="ttdeci">static int modulo(int i, int m)</div><div class="ttdoc">modulo permettant de gérer les bordures des grilles </div><div class="ttdef"><b>Definition:</b> jeu.h:16</div></div>
+<div class="ttc" id="jeu_8h_html_aa97c0fafeb752bb66a038e73b7b5a36d"><div class="ttname"><a href="jeu_8h.html#aa97c0fafeb752bb66a038e73b7b5a36d">evolue</a></div><div class="ttdeci">void evolue(grille *g, grille *gc, cellule *C, int(*compte_voisins_vivants)(int, int, grille), int vieillissement)</div><div class="ttdoc">evolution de grille et de cellule simultanemment </div><div class="ttdef"><b>Definition:</b> jeu.c:104</div></div>
+<div class="ttc" id="structgrille_html"><div class="ttname"><a href="structgrille.html">grille</a></div><div class="ttdoc">Grille du jeu. </div><div class="ttdef"><b>Definition:</b> grille.h:20</div></div>
+<div class="ttc" id="structcellule_html"><div class="ttname"><a href="structcellule.html">cellule</a></div><div class="ttdoc">Grille du jeu. </div><div class="ttdef"><b>Definition:</b> grille.h:28</div></div>
+<div class="ttc" id="grille_8h_html"><div class="ttname"><a href="grille_8h.html">grille.h</a></div><div class="ttdoc">Fonctions liées aux grilles. </div></div>
+<div class="ttc" id="jeu_8h_html_ac22548ead77af485a5209ef6b9c73e2c"><div class="ttname"><a href="jeu_8h.html#ac22548ead77af485a5209ef6b9c73e2c">compte_voisins_vivants</a></div><div class="ttdeci">int(* compte_voisins_vivants)(int, int, grille)</div><div class="ttdoc">(*compte_voisins_vivants) (int, int, grille) pointeur sur la fonction cyclique ou non cyclique ...</div><div class="ttdef"><b>Definition:</b> jeu.h:57</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
